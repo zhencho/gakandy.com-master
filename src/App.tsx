@@ -19,7 +19,7 @@ import GlobalRecruiter from './components/home/GlobalRecruiter';
 
 function HomePage() {
   return (
-    <div className="bg-site-bg">
+    <div className="bg-site-bg text-site-text">
       <Hero />
       <WhyChooseUs />
       <CoreValues />
@@ -45,7 +45,7 @@ function NotFound() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-site-bg">
+      <div className="min-h-screen bg-site-bg text-site-text">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

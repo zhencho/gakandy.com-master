@@ -9,7 +9,7 @@ interface SectionProps extends HTMLMotionProps<"section"> {
   titleClassName?: string;
   subtitleClassName?: string;
   containerClassName?: string;
-  background?: 'white' | 'gray' | 'primary' | 'secondary';
+  background?: 'white' | 'gray' | 'primary' | 'secondary' | 'dark' | 'darkElevated';
 }
 
 export default function Section({
@@ -20,14 +20,16 @@ export default function Section({
   titleClassName = '',
   subtitleClassName = '',
   containerClassName = '',
-  background = 'white',
+  background = 'dark',
   ...props
 }: SectionProps) {
   const backgroundStyles = {
-    white: 'bg-white',
-    gray: 'bg-gray-50',
+    white: 'bg-site-surface text-site-text',
+    gray: 'bg-site-elevated text-site-text',
     primary: 'bg-indigoDye-primary text-white',
     secondary: 'bg-pictonBlue-primary text-white',
+    dark: 'bg-site-bg text-site-text',
+    darkElevated: 'bg-site-surface text-site-text',
   };
 
   return (
@@ -46,7 +48,7 @@ export default function Section({
                 className={`text-3xl md:text-4xl font-bold font-serif mb-4 ${
                   background === 'primary' || background === 'secondary'
                     ? 'text-white'
-                    : 'text-indigoDye-primary'
+                    : 'text-site-text'
                 } ${titleClassName}`}
               >
                 {title}
@@ -61,7 +63,7 @@ export default function Section({
                 className={`text-lg ${
                   background === 'primary' || background === 'secondary'
                     ? 'text-gray-100'
-                    : 'text-gray-600'
+                    : 'text-site-muted'
                 } max-w-2xl mx-auto ${subtitleClassName}`}
               >
                 {subtitle}

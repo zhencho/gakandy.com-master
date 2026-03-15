@@ -27,13 +27,13 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#081522_0%,#0b1c2c_100%)] py-24">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute -left-64 -top-64 w-[500px] h-[500px] rounded-full bg-[#033A5B]/5 blur-3xl" />
-        <div className="absolute -right-64 -bottom-64 w-[500px] h-[500px] rounded-full bg-[#0C4D75]/5 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,176,235,0.05),transparent_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,176,235,0.05),transparent_40%)]" />
+        <div className="absolute -left-64 -top-64 h-[500px] w-[500px] rounded-full bg-[#033A5B]/15 blur-3xl" />
+        <div className="absolute -right-64 -bottom-64 h-[500px] w-[500px] rounded-full bg-[#0C4D75]/12 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,176,235,0.08),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,176,235,0.08),transparent_40%)]" />
       </div>
 
       {/* Grid Pattern */}
@@ -45,7 +45,7 @@ export default function Benefits() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#033A5B] to-[#22B0EB] mb-4"
+            className="mb-4 bg-gradient-to-r from-[#f4fbff] to-[#7cd8ff] bg-clip-text text-3xl font-bold text-transparent lg:text-4xl"
           >
             Why Choose Us
           </motion.h2>
@@ -54,7 +54,7 @@ export default function Benefits() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-gray-600 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-[#9db0c3]"
           >
             Experience excellence in professional services with our dedicated team committed to your success
           </motion.p>
@@ -73,9 +73,7 @@ export default function Benefits() {
               variants={fadeInUp}
               className="group h-full"
             >
-              <div className="relative p-8 rounded-xl bg-gradient-to-br from-[#033A5B]/[0.02] to-[#0C4D75]/[0.05] 
-                            hover:from-[#033A5B]/[0.08] hover:to-[#0C4D75]/[0.12] border border-[#033A5B]/10 
-                            transition-all duration-300 h-full flex flex-col overflow-hidden">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-8 transition-all duration-300">
                 {/* Hover Effect Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#22B0EB]/10 to-transparent opacity-0 
                               group-hover:opacity-100 transition-opacity duration-300" />
@@ -92,12 +90,10 @@ export default function Benefits() {
 
                   {/* Text content */}
                   <div className="flex flex-col flex-1 justify-between">
-                    <h3 className="text-xl font-medium text-[#033A5B] mb-3 text-center group-hover:text-[#22B0EB] 
-                                 transition-colors duration-300">
+                    <h3 className="mb-3 text-center text-xl font-medium text-[#f4fbff] transition-colors duration-300 group-hover:text-[#7cd8ff]">
                       {benefit.name}
                     </h3>
-                    <p className="text-gray-600 text-center text-sm leading-relaxed group-hover:text-[#0C4D75] 
-                                transition-colors duration-300">
+                    <p className="text-center text-sm leading-relaxed text-[#9db0c3] transition-colors duration-300 group-hover:text-[#dce7f1]">
                       {benefit.description}
                     </p>
                   </div>

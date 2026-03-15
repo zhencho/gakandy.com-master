@@ -71,7 +71,7 @@ const gradientPairs = [
 
 export const CoreValues: React.FC = () => {
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50 py-12">
+    <section className="bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,10 +79,10 @@ export const CoreValues: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#f4fbff] sm:text-4xl">
             Our Core Values
           </h2>
-          <p className="mt-4 text-lg leading-8 text-gray-600">
+          <p className="mt-4 text-lg leading-8 text-[#9db0c3]">
             The principles that guide our professional excellence and client service
           </p>
         </motion.div>

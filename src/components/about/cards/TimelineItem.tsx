@@ -21,10 +21,10 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       
       {/* Content */}
       <div className="group">
-        <h3 className="text-xl font-bold text-[#033A5B] mb-2 group-hover:text-[#22B0EB] transition-colors duration-300">
+        <h3 className="mb-2 text-xl font-bold text-[#f4fbff] transition-colors duration-300 group-hover:text-[#7cd8ff]">
           {item.year}
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="leading-relaxed text-[#9db0c3]">
           {item.description}
         </p>
       </div>

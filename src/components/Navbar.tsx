@@ -31,89 +31,85 @@ export default function Navbar() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
-      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-white/60 bg-white/85 shadow-[0_18px_60px_rgba(3,58,91,0.14)] backdrop-blur-xl">
-        <div className="flex justify-between h-20 px-4 sm:px-6 lg:px-8">
-          <div className="flex-shrink-0 flex items-center relative">
-            <Link to="/">
+      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[#24435d]/70 bg-[rgba(8,19,31,0.82)] shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+        <div className="flex h-20 justify-between px-4 sm:px-6 lg:px-8">
+          <div className="relative flex flex-shrink-0 items-center">
+            <Link to="/" className="flex items-center gap-3">
               <div className="relative flex h-16 w-16 items-center justify-center">
-                {/* Orbital rings */}
-                <div className="absolute w-full h-full border-2 border-[#28A2D4]/30 rounded-full transform rotate-45"></div>
-                <div className="absolute w-[120%] h-[120%] border-2 border-[#22B0EB]/20 rounded-full"></div>
-                
-                {/* Static logo */}
-                <div className="relative w-12 h-12 z-10">
-                  <img 
+                <div className="absolute h-full w-full rounded-full border-2 border-[#28A2D4]/30 rotate-45" />
+                <div className="absolute h-[120%] w-[120%] rounded-full border border-[#22B0EB]/20" />
+                <div className="relative z-10 h-12 w-12 rounded-full bg-white/95 p-1 shadow-[0_8px_25px_rgba(255,255,255,0.18)]">
+                  <img
                     src={COMPANY_LOGO}
-                    alt="Global Associates Logo" 
-                    className="w-full h-full object-contain"
+                    alt="Global Associates Logo"
+                    className="h-full w-full object-contain"
                   />
                 </div>
-
-                {/* Satellite effect */}
                 <motion.div
                   variants={satelliteVariants}
                   initial="initial"
                   animate="animate"
-                  className="absolute w-full h-full"
+                  className="absolute h-full w-full"
                 >
-                  <div className="absolute -right-1 top-1/2 transform -translate-y-1/2">
-                    <div className="w-2 h-2 bg-[#22B0EB] rounded-full"></div>
-                    <div className="w-2 h-2 bg-[#28A2D4] rounded-full blur-sm absolute"></div>
+                  <div className="absolute -right-1 top-1/2 -translate-y-1/2">
+                    <div className="h-2 w-2 rounded-full bg-[#22B0EB]" />
+                    <div className="absolute h-2 w-2 rounded-full bg-[#28A2D4] blur-sm" />
                   </div>
                 </motion.div>
-
-                {/* Additional satellites for more dynamic effect */}
                 <motion.div
                   variants={satelliteVariants}
                   initial="initial"
                   animate="animate"
-                  className="absolute w-[90%] h-[90%] rotate-90"
+                  className="absolute h-[90%] w-[90%] rotate-90"
                 >
-                  <div className="absolute -right-1 top-1/2 transform -translate-y-1/2">
-                    <div className="w-1.5 h-1.5 bg-[#126190] rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-[#0C4D75] rounded-full blur-sm absolute"></div>
+                  <div className="absolute -right-1 top-1/2 -translate-y-1/2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#126190]" />
+                    <div className="absolute h-1.5 w-1.5 rounded-full bg-[#0C4D75] blur-sm" />
                   </div>
                 </motion.div>
               </div>
+              <div className="hidden lg:block">
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9db0c3]">Global Associates</p>
+                <p className="text-xs text-[#6e8599]">Chartered Accountants</p>
+              </div>
             </Link>
           </div>
-          
-          <div className="hidden md:flex items-center gap-2 rounded-full border border-slate-200/80 bg-slate-50/80 px-3 py-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.to;
 
-              return (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
-                    isActive
-                      ? 'bg-[#033A5B] text-white shadow-[0_12px_30px_rgba(3,58,91,0.22)]'
-                      : 'text-slate-700 hover:bg-white hover:text-[#033A5B]'
-                  }`}
-                >
-                  <Icon
-                    size={17}
-                    className={isActive ? 'text-[#FFC635]' : 'text-[#22B0EB] transition-colors'}
-                  />
-                  <span>{item.label}</span>
-                </Link>
-              );
-            })}
+          <div className="hidden items-center md:flex">
+            <div className="flex items-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.82)] px-3 py-2">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.to;
+
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                      isActive
+                        ? 'bg-[#12314a] text-[#f4fbff] shadow-[0_14px_30px_rgba(4,12,20,0.4)]'
+                        : 'text-[#c7d6e4] hover:bg-[#102335] hover:text-white'
+                    }`}
+                  >
+                    <Icon size={17} className={isActive ? 'text-[#FFC635]' : 'text-[#4ec4ff]'} />
+                    <span>{item.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-50 p-3 text-gray-700 transition-colors hover:text-blue-600"
+              className="inline-flex items-center justify-center rounded-full border border-[#24435d] bg-[#102335] p-3 text-[#d9e6f2] transition-colors hover:text-white"
               aria-label="Toggle navigation"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
-        {/* Mobile menu */}
+
         <motion.div
           initial={false}
           animate={isOpen ? "open" : "closed"}
@@ -121,50 +117,28 @@ export default function Navbar() {
             open: {
               opacity: 1,
               height: "auto",
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 24,
-                staggerChildren: 0.07,
-              }
+              transition: { type: "spring", stiffness: 300, damping: 24, staggerChildren: 0.07 }
             },
             closed: {
               opacity: 0,
               height: 0,
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 24,
-                staggerChildren: 0.05,
-                staggerDirection: -1,
-                when: "afterChildren"
-              }
+              transition: { type: "spring", stiffness: 300, damping: 24, staggerChildren: 0.05, staggerDirection: -1, when: "afterChildren" }
             }
           }}
-          className="md:hidden overflow-hidden"
+          className="overflow-hidden md:hidden"
         >
-          <motion.div 
+          <motion.div
             variants={{
               open: {
                 clipPath: "inset(0% 0% 0% 0%)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.7,
-                  delayChildren: 0.3,
-                  staggerChildren: 0.05
-                }
+                transition: { type: "spring", bounce: 0, duration: 0.7, delayChildren: 0.2, staggerChildren: 0.05 }
               },
               closed: {
                 clipPath: "inset(10% 50% 90% 50%)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.3
-                }
+                transition: { type: "spring", bounce: 0, duration: 0.3 }
               }
             }}
-            className="mx-3 mb-3 space-y-1 rounded-[1.5rem] border border-white/70 bg-white/95 px-3 pb-3 pt-2 shadow-lg backdrop-blur-sm"
+            className="mx-3 mb-3 space-y-1 rounded-[1.5rem] border border-[#24435d] bg-[rgba(9,24,39,0.96)] px-3 pb-3 pt-2 shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
           >
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -174,11 +148,7 @@ export default function Navbar() {
                 <motion.div
                   key={item.to}
                   variants={{
-                    open: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { type: "spring", stiffness: 300, damping: 24 }
-                    },
+                    open: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
                     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
                   }}
                 >
@@ -186,12 +156,12 @@ export default function Navbar() {
                     to={item.to}
                     className={`flex w-full items-center gap-3 rounded-2xl px-4 py-3 font-medium transition-all duration-300 ${
                       isActive
-                        ? 'bg-[#033A5B] text-white shadow-[0_12px_30px_rgba(3,58,91,0.18)]'
-                        : 'text-gray-700 hover:bg-slate-50 hover:text-[#033A5B]'
+                        ? 'bg-[#12314a] text-white shadow-[0_12px_30px_rgba(0,0,0,0.28)]'
+                        : 'text-[#d4e1ee] hover:bg-[#102335] hover:text-white'
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <Icon size={18} className={isActive ? 'text-[#FFC635]' : 'text-[#22B0EB]'} />
+                    <Icon size={18} className={isActive ? 'text-[#FFC635]' : 'text-[#4ec4ff]'} />
                     <span>{item.label}</span>
                   </Link>
                 </motion.div>

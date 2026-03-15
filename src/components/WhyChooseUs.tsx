@@ -1,36 +1,36 @@
 import { motion } from 'framer-motion';
-import { Award, Clock, Target, Briefcase, Calendar, Star, Shield, Users } from 'lucide-react';
+import { Award, Clock, Target, Briefcase, Calendar, Star } from 'lucide-react';
 
 const features = [
   {
     name: 'Professional Excellence',
     description: 'Delivering high-quality auditing and consultancy services with unwavering commitment to excellence.',
     icon: Award,
-    gradient: 'from-[#033A5B] to-[#0C4D75]',
+    gradient: 'from-[#12314a] to-[#0C4D75]',
   },
   {
     name: 'Industry Expertise',
     description: 'Leveraging years of experience to provide comprehensive financial and business solutions.',
     icon: Briefcase,
-    gradient: 'from-[#084461] to-[#126190]',
+    gradient: 'from-[#0f2740] to-[#126190]',
   },
   {
     name: 'Client-Centric Approach',
     description: 'Tailoring our services to meet your specific needs with unlimited support and guidance.',
     icon: Target,
-    gradient: 'from-[#22B0EB] to-[#28A2D4]',
+    gradient: 'from-[#126190] to-[#22B0EB]',
   },
   {
     name: 'Timely Delivery',
     description: 'Meeting deadlines consistently while maintaining the highest standards of quality.',
     icon: Clock,
-    gradient: 'from-[#033A5B] to-[#22B0EB]',
+    gradient: 'from-[#102335] to-[#1f6f98]',
   },
   {
     name: 'Continuous Support',
     description: 'Providing ongoing assistance and updates to ensure your continued success.',
     icon: Calendar,
-    gradient: 'from-[#084461] to-[#28A2D4]',
+    gradient: 'from-[#102335] to-[#1b8bc4]',
   },
   {
     name: 'Quality Assurance',
@@ -42,12 +42,7 @@ const features = [
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
 };
 
 const itemVariants = {
@@ -55,40 +50,34 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 12,
-      duration: 0.6
-    }
+    transition: { type: "spring", stiffness: 100, damping: 12, duration: 0.6 }
   }
 };
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Background Decoration */}
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#081522_0%,#0b1c2c_100%)] py-24">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -skew-y-12 transform bg-[#033A5B]/5 w-full h-full"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,176,235,0.04),transparent_40%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,176,235,0.04),transparent_40%)]"></div>
+        <div className="absolute -skew-y-6 bg-[#0f2740] opacity-50 w-full h-full" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,176,235,0.09),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.06),transparent_40%)]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div 
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="lg:text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-base font-semibold tracking-wide uppercase text-[#22B0EB]">Why Choose Global Associates</h2>
-          <p className="mt-2 text-4xl font-extrabold text-[#033A5B] sm:text-5xl font-serif">
+          <h2 className="text-base font-semibold uppercase tracking-[0.3em] text-[#56d4ff]">Why Choose Global Associates</h2>
+          <p className="mt-3 text-4xl font-extrabold text-[#f4fbff] sm:text-5xl font-serif">
             Our Commitment to Excellence
           </p>
-          <div className="mt-4 mx-auto w-24 h-1 bg-[#22B0EB] rounded-full"></div>
-          <p className="mt-6 max-w-3xl text-xl text-gray-600 lg:mx-auto leading-relaxed">
-            We are dedicated to delivering exceptional financial services and innovative solutions 
+          <div className="mt-4 mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-[#22B0EB] to-[#FFC635]" />
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-[#9db0c3]">
+            We are dedicated to delivering exceptional financial services and innovative solutions
             that drive your business forward.
           </p>
         </motion.div>
@@ -105,24 +94,17 @@ export default function WhyChooseUs() {
               <motion.div
                 key={feature.name}
                 variants={itemVariants}
-                className="group relative bg-white rounded-2xl shadow-[0_4px_20px_rgba(3,58,91,0.08)] hover:shadow-[0_8px_30px_rgba(3,58,91,0.12)] 
-                          transition-all duration-500 p-8 overflow-hidden hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-8 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-500 hover:-translate-y-1 hover:border-[#2e597b]"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-[0.03] 
-                              transition-opacity duration-500`}></div>
-                
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-[0.12]`} />
                 <div className="relative flex flex-col items-start">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-xl 
-                                bg-gradient-to-r ${feature.gradient} text-white 
-                                transform group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r ${feature.gradient} text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-110`}>
                     <feature.icon className="h-7 w-7" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-6 text-xl font-bold text-[#033A5B] group-hover:text-[#22B0EB] 
-                              transition-colors duration-500">
+                  <h3 className="mt-6 text-xl font-bold text-[#f4fbff] transition-colors duration-500 group-hover:text-[#7cd8ff]">
                     {feature.name}
                   </h3>
-                  <p className="mt-4 text-gray-600 group-hover:text-gray-700 
-                              transition-colors duration-500 leading-relaxed">
+                  <p className="mt-4 leading-relaxed text-[#9db0c3] transition-colors duration-500 group-hover:text-[#d5e3ef]">
                     {feature.description}
                   </p>
                 </div>

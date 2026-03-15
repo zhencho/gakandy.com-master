@@ -10,15 +10,15 @@ interface ServiceCategoryProps {
 export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ title, description, services }) => (
   <motion.div
     variants={fadeInUp}
-    className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
+    className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-8 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:border-[#2e597b]"
   >
-    <h3 className="text-2xl font-bold text-[#033A5B] mb-4">{title}</h3>
-    <p className="text-gray-600 mb-6">{description}</p>
+    <h3 className="mb-4 text-2xl font-bold text-[#f4fbff]">{title}</h3>
+    <p className="mb-6 text-[#9db0c3]">{description}</p>
     <ul className="space-y-3">
       {services.map((service, index) => (
         <li key={index} className="flex items-start space-x-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#22B0EB] mt-2.5" />
-          <span className="text-gray-700">{service}</span>
+          <div className="mt-2.5 h-1.5 w-1.5 rounded-full bg-[#4ec4ff]" />
+          <span className="text-[#d6e3ef]">{service}</span>
         </li>
       ))}
     </ul>

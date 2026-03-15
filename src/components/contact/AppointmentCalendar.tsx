@@ -213,8 +213,8 @@ const AppointmentCalendar: React.FC = () => {
   const weekDays = generateWeekDays();
 
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-      <h3 className="text-2xl font-bold text-[#101b43] mb-6 bg-gradient-to-r from-[#101b43] to-[#1e2d5b] bg-clip-text text-transparent">
+    <div className="rounded-[1.75rem] border border-[#24435d] bg-[rgba(12,27,42,0.92)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm">
+      <h3 className="mb-6 bg-gradient-to-r from-[#f4fbff] to-[#7cd8ff] bg-clip-text text-2xl font-bold text-transparent">
         Book an Appointment
       </h3>
       
@@ -223,19 +223,19 @@ const AppointmentCalendar: React.FC = () => {
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={goToPreviousWeek}
-            className="p-2 rounded-lg hover:bg-[#101b43]/10 transition-colors"
+            className="rounded-lg p-2 text-[#dce7f1] transition-colors hover:bg-[#102335]"
             disabled={currentWeekStart <= new Date()}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <span className="text-[#101b43] font-medium">
+          <span className="font-medium text-[#dce7f1]">
             {format(weekDays[0], 'MMMM d')} - {format(weekDays[weekDays.length - 1], 'MMMM d, yyyy')}
           </span>
           <button
             onClick={goToNextWeek}
-            className="p-2 rounded-lg hover:bg-[#101b43]/10 transition-colors"
+            className="rounded-lg p-2 text-[#dce7f1] transition-colors hover:bg-[#102335]"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -245,15 +245,15 @@ const AppointmentCalendar: React.FC = () => {
         <div className="grid grid-cols-5 gap-2">
           {weekDays.map((date, index) => (
             <div key={index} className="text-center">
-              <div className="text-sm font-medium text-[#101b43]/70 mb-2">
+              <div className="mb-2 text-sm font-medium text-[#9db0c3]">
                 {format(date, 'EEE')}
               </div>
               <button
                 onClick={() => handleDateClick(date)}
                 className={`w-full py-2 px-1 rounded-lg text-sm transition-all duration-300 ${
                   isSameDay(selectedDate, date)
-                    ? 'bg-[#101b43] text-white'
-                    : 'hover:bg-[#101b43]/10'
+                    ? 'bg-[#12314a] text-white'
+                    : 'text-[#dce7f1] hover:bg-[#102335]'
                 }`}
               >
                 <span className="block font-medium">
@@ -270,7 +270,7 @@ const AppointmentCalendar: React.FC = () => {
 
       {/* Time Slots */}
       <div className="mb-6">
-        <h4 className="text-lg font-semibold text-[#101b43] mb-4">
+        <h4 className="mb-4 text-lg font-semibold text-[#f4fbff]">
           Available Times for {format(selectedDate, 'MMMM d, yyyy')}
         </h4>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -282,10 +282,10 @@ const AppointmentCalendar: React.FC = () => {
               className={`
                 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300
                 ${selectedSlot?.time === slot.time
-                  ? 'bg-[#101b43] text-white shadow-lg'
+                  ? 'bg-[#12314a] text-white shadow-lg'
                   : slot.isBooked
-                  ? 'bg-red-100 text-red-500 cursor-not-allowed'
-                  : 'bg-white hover:bg-[#101b43]/10 text-[#101b43] shadow-sm'
+                  ? 'cursor-not-allowed bg-red-500/15 text-red-300'
+                  : 'bg-[#102335] text-[#dce7f1] shadow-sm hover:bg-[#12314a]'
                 }
               `}
             >
@@ -298,8 +298,8 @@ const AppointmentCalendar: React.FC = () => {
       {/* Selected Time Display and Contact Form */}
       {selectedSlot && (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="p-4 bg-[#101b43]/5 rounded-lg border border-[#101b43]/10 mb-4">
-            <p className="text-[#101b43] font-medium">
+          <div className="mb-4 rounded-lg border border-[#24435d] bg-[#102335] p-4">
+            <p className="font-medium text-[#dce7f1]">
               Selected Time: {format(selectedSlot.time, 'EEEE, MMMM d')} at {format(selectedSlot.time, 'h:mm a')}
             </p>
           </div>
@@ -307,7 +307,7 @@ const AppointmentCalendar: React.FC = () => {
           {/* Contact Details Form */}
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-[#101b43] mb-1">
+              <label htmlFor="name" className="mb-1 block text-sm font-medium text-[#dce7f1]">
                 Full Name *
               </label>
               <input
@@ -316,13 +316,13 @@ const AppointmentCalendar: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                className="w-full px-4 py-2 rounded-lg bg-white border border-[#cab293]/30 focus:ring-2 focus:ring-[#cab293] focus:border-[#cab293] transition-all duration-300"
+                className="w-full rounded-lg border border-[#24435d] bg-[#102335] px-4 py-2 text-[#f4fbff] transition-all duration-300 focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                 placeholder="John Doe"
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[#101b43] mb-1">
+              <label htmlFor="email" className="mb-1 block text-sm font-medium text-[#dce7f1]">
                 Email Address *
               </label>
               <input
@@ -331,13 +331,13 @@ const AppointmentCalendar: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                className="w-full px-4 py-2 rounded-lg bg-white border border-[#cab293]/30 focus:ring-2 focus:ring-[#cab293] focus:border-[#cab293] transition-all duration-300"
+                className="w-full rounded-lg border border-[#24435d] bg-[#102335] px-4 py-2 text-[#f4fbff] transition-all duration-300 focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                 placeholder="john@example.com"
               />
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-[#101b43] mb-1">
+              <label htmlFor="phone" className="mb-1 block text-sm font-medium text-[#dce7f1]">
                 Phone Number *
               </label>
               <input
@@ -346,7 +346,7 @@ const AppointmentCalendar: React.FC = () => {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                className="w-full px-4 py-2 rounded-lg bg-white border border-[#cab293]/30 focus:ring-2 focus:ring-[#cab293] focus:border-[#cab293] transition-all duration-300"
+                className="w-full rounded-lg border border-[#24435d] bg-[#102335] px-4 py-2 text-[#f4fbff] transition-all duration-300 focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                 placeholder="+94 77 123 4567"
               />
             </div>
@@ -359,12 +359,12 @@ const AppointmentCalendar: React.FC = () => {
             className={`
               w-full px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300
               ${status === 'loading'
-                ? 'bg-[#cab293]/70 cursor-wait'
+                ? 'bg-[#24435d] cursor-wait text-white'
                 : status === 'success'
                 ? 'bg-green-500 text-white'
                 : status === 'error'
                 ? 'bg-red-500 text-white'
-                : 'bg-[#cab293] hover:bg-[#cab293]/90 text-[#101b43]'
+                : 'bg-[#FFC635] hover:bg-[#ffd86a] text-[#06131f]'
               }
             `}
           >

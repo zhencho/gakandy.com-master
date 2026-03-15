@@ -1,273 +1,200 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+
+const highlights = [
+  'Audit and assurance services tailored for growth-stage and established businesses',
+  'Trusted advisory support for governance, reporting, and operational clarity',
+];
+
+const stats = [
+  { label: 'Client-first delivery', value: 'Tailored' },
+  { label: 'Response model', value: 'Hands-on' },
+  { label: 'Focus', value: 'Audit-ready' },
+];
 
 export default function Hero() {
   return (
-    <>
-      <div id="home" className="relative min-h-[75vh] overflow-hidden bg-black/10">
-        {/* Background Image with Blur Effect */}
-        <div className="absolute inset-0">
-          <motion.img
-            src="https://ik.imagekit.io/d36vkx7c33/gakandy/primary-hero-image.jpg"
-            alt="Hero Background"
-            className="w-full h-full object-cover object-top"
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.4 }}
-            transition={{ duration: 1.5 }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </div>
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#07111b_0%,#091827_48%,#06131f_100%)] pt-32 sm:pt-36"
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-[-10rem] top-8 h-72 w-72 rounded-full bg-[#22B0EB]/12 blur-3xl" />
+        <div className="absolute right-[-8rem] top-24 h-80 w-80 rounded-full bg-[#033A5B]/25 blur-3xl" />
+        <div className="absolute bottom-[-8rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FFC635]/8 blur-3xl" />
+      </div>
 
-        {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-black/20">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#033A5B]/5 via-transparent to-[#22B0EB]/5" />
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/30 to-transparent" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 pb-20 sm:pt-32 lg:px-8 lg:pt-32">
-          <div className="mx-auto max-w-2xl lg:max-w-4xl">
-            {/* Main Content */}
-            <div className="text-center">
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl"
+        >
+          <div className="max-w-fit px-2 py-3">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
+              className="relative"
+            >
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: "spring",
-                    damping: 8,
-                    stiffness: 100,
-                    restDelta: 0.001
-                  }
+                className="relative inline-block"
+                style={{
+                  textShadow: '0 2px 10px rgba(0,0,0,0.35)',
+                  filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.25))'
                 }}
-                className="mb-8"
               >
-                <motion.div 
-                  className="inline-block mb-2 uppercase font-extrabold tracking-widest text-2xl sm:text-4xl relative"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.05))'
-                  }}
-                >
-                  {/* Orbit Path */}
-                  <div className="absolute -inset-8 -z-10 rounded-full border border-[#22B0EB]/20" />
-                  
-                  {/* Orbiting Element */}
-                  <div className="absolute inset-0 -z-10">
+                <div className="pointer-events-none absolute -inset-x-8 -inset-y-5 rounded-full border border-[#2c4d6c]/80" />
+                <div className="pointer-events-none absolute inset-0">
+                  <motion.div
+                    className="relative h-full w-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  >
                     <motion.div
-                      className="relative w-full h-full"
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "linear"
+                      className="absolute left-1/2 top-[-1.5rem] h-5 w-5 -translate-x-1/2 rounded-full"
+                      style={{
+                        background: `conic-gradient(from 0deg,#033A5B 0deg,#0C4D75 120deg,#22B0EB 240deg,#033A5B 360deg)`,
+                        boxShadow: '0 0 18px 3px rgba(34, 176, 235, 0.25)'
                       }}
-                    >
-                      <motion.div 
-                        className="absolute"
-                        style={{
-                          top: '-2rem',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          width: '20px',
-                          height: '20px',
-                          background: `conic-gradient(
-                            from 0deg,
-                            #033A5B 0deg,
-                            #0C4D75 120deg,
-                            #22B0EB 240deg,
-                            #033A5B 360deg
-                          )`,
-                          borderRadius: '50%',
-                          boxShadow: '0 0 15px 2px rgba(34, 176, 235, 0.3)'
-                        }}
-                        animate={{ rotate: 360 }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                      />
-                    </motion.div>
-                  </div>
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    />
+                  </motion.div>
+                </div>
 
-                  <motion.span 
-                    className="inline-block text-[#22B0EB] royal-text"
-                    initial={{ y: -100, opacity: 0 }}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 uppercase font-extrabold tracking-[0.16em] text-3xl sm:text-5xl">
+                  <motion.span
+                    className="inline-block text-[#22B0EB]"
+                    initial={{ y: -70, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     style={{
-                      background: 'linear-gradient(145deg, #22B0EB 0%, #28A2D4 100%)',
+                      background: 'linear-gradient(145deg, #56d4ff 0%, #28A2D4 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-                      filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))',
                       position: 'relative',
                       padding: '0 4px'
                     }}
                   >
-                    <div
-                      style={{
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: '50%',
-                        background: 'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%)',
-                        borderRadius: '4px 4px 0 0',
-                        pointerEvents: 'none'
-                      }}
-                    />
                     Global
-                  </motion.span>{' '}
-                  <motion.span 
-                    className="inline-block text-[#033A5B] royal-text"
-                    initial={{ y: 100, opacity: 0 }}
+                  </motion.span>
+                  <motion.span
+                    className="inline-block text-[#e8f0f7]"
+                    initial={{ y: 70, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
                     Associates
                   </motion.span>
-                </motion.div>
+                </div>
 
                 <motion.div
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="block text-xl sm:text-2xl font-medium text-gray-600 mt-3"
+                  className="mt-3 flex items-center justify-center text-lg font-medium text-[#9db0c3] sm:justify-start sm:text-2xl"
                 >
-                  Chartered Accountants
+                  <span>Chartered Accountants</span>
                 </motion.div>
               </motion.div>
+            </motion.div>
+          </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 0.8,
-                  ease: "easeOut"
-                }}
-                className="mt-6 text-lg leading-8 text-gray-600 max-w-xl mx-auto relative emphasis-text"
-              >
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1 }}
-                  className="inline-block"
-                >
-                  Performance
-                </motion.span>{' '}
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  className="inline-block text-gray-400"
-                >
-                  through
-                </motion.span>{' '}
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.4 }}
-                  className="inline-block font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#033A5B] to-[#22B0EB]"
-                >
-                  Excellence
-                </motion.span>
-              </motion.div>
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.72)] px-4 py-2 text-sm font-semibold text-[#9fdcff] shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur">
+            <Sparkles className="h-4 w-4 text-[#4ec4ff]" />
+            Trusted chartered accountants for modern businesses
+          </div>
 
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6"
+          <h1 className="mt-8 max-w-3xl text-5xl font-bold leading-[1.02] tracking-tight text-[#f3f8fc] sm:text-6xl">
+            Financial clarity,
+            <span className="block bg-gradient-to-r from-[#4ec4ff] via-[#8cdcf8] to-[#f1f7fb] bg-clip-text text-transparent">
+              audit confidence,
+            </span>
+            and business momentum.
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#9db0c3] sm:text-xl">
+            Global Associates helps organizations strengthen reporting, navigate compliance,
+            and move forward with practical advice that feels sharp, responsive, and dependable.
+          </p>
+
+          <div className="mt-8 space-y-3">
+            {highlights.map((item) => (
+              <div key={item} className="flex items-start gap-3 text-[#c7d6e4]">
+                <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#12314a] text-white">
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#4ec4ff]" />
+                </div>
+                <p className="text-base leading-7">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#22B0EB] px-7 py-4 text-sm font-semibold text-[#06131f] shadow-[0_18px_40px_rgba(34,176,235,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#56d4ff]"
+            >
+              Schedule Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.72)] px-7 py-4 text-sm font-semibold text-[#e8f0f7] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#4ec4ff]/40 hover:text-white"
+            >
+              Explore Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur"
               >
-                <Link
-                  to="/contact"
-                  className="group relative inline-flex w-full sm:w-auto whitespace-nowrap items-center justify-center gap-x-2 rounded-xl bg-gradient-to-r from-[#033A5B] to-[#22B0EB] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#22B0EB]/25 hover:-translate-y-0.5 overflow-hidden"
-                >
-                  <span className="relative z-10">Schedule Consultation</span>
-                  <ChevronRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#22B0EB] to-[#033A5B] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </Link>
-                
-                <Link
-                  to="/services"
-                  className="group relative inline-flex w-full sm:w-auto whitespace-nowrap items-center justify-center gap-x-2 rounded-xl border-2 border-[#033A5B]/10 bg-white/80 px-6 py-3.5 text-sm font-semibold text-[#033A5B] backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-[#033A5B]/5 hover:to-[#22B0EB]/5 hover:border-[#033A5B]/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#033A5B]/5"
-                >
-                  <span>Explore Services</span>
-                  <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </Link>
-              </motion.div>
+                <p className="text-2xl font-bold text-[#f1f7fb]">{stat.value}</p>
+                <p className="mt-2 text-sm font-medium text-[#9db0c3]">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 28 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, delay: 0.15 }}
+          className="relative"
+        >
+          <div className="absolute -left-6 top-10 hidden h-24 w-24 rounded-[2rem] bg-[#FFC635]/15 blur-2xl lg:block" />
+          <div className="absolute -right-6 bottom-16 hidden h-28 w-28 rounded-full bg-[#22B0EB]/18 blur-2xl lg:block" />
+
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#24435d] bg-[rgba(12,27,42,0.86)] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <img
+              src="https://ik.imagekit.io/d36vkx7c33/gakandy/primary-hero-image.jpg"
+              alt="Global Associates professional consultation"
+              className="h-[440px] w-full rounded-[1.5rem] object-cover object-[72%_top] lg:object-[78%_top]"
+            />
+
+            <div className="absolute inset-0 rounded-[1.75rem] bg-gradient-to-t from-[#06131f]/60 via-transparent to-transparent" />
+            <div className="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-white/10 bg-[rgba(7,17,27,0.72)] p-6 text-white shadow-[0_18px_50px_rgba(0,0,0,0.32)] backdrop-blur-md lg:right-12">
+              <div className="flex items-center gap-3 text-sm font-semibold text-[#FFC635]">
+                <TrendingUp className="h-4 w-4" />
+                Performance through excellence
+              </div>
+              <p className="mt-3 text-2xl font-semibold leading-tight text-[#f4fbff]">
+                Built for organizations that want sharper oversight and smoother decision-making.
+              </p>
+              <p className="mt-3 max-w-md text-sm leading-6 text-[#b5c6d6]">
+                From audit preparation to advisory support, we help teams stay organized, accountable,
+                and ready for what comes next.
+              </p>
             </div>
           </div>
-        </div>
-
-        <style>{`
-          .royal-text {
-            background: linear-gradient(180deg, 
-              rgba(255,255,255,0.15) 0%,
-              rgba(255,255,255,0) 100%
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            position: relative;
-          }
-          
-          .royal-text::before {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform: translateZ(-5px);
-            opacity: 0.3;
-            filter: blur(1px);
-          }
-          
-          .emphasis-text {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
-          }
-          
-          .emphasis-text::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, #033A5B, #22B0EB);
-            animation: underlineExpand 1.5s ease-out 2s forwards;
-          }
-          
-          @keyframes underlineExpand {
-            from {
-              width: 0;
-            }
-            to {
-              width: 180px;
-            }
-          }
-          
-          @keyframes shimmer {
-            0% {
-              background-position: 100% 0;
-            }
-            100% {
-              background-position: -100% 0;
-            }
-          }
-        `}</style>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 }

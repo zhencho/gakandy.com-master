@@ -2,149 +2,107 @@ import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <div id="about" className="relative bg-gradient-to-b from-[#00204A]/5 to-[#00204A]/10 py-20 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Background Decorative Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.04),transparent_40%)] pointer-events-none"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.04),transparent_40%)] pointer-events-none"></div>
-        </div>
+    <div id="about" className="relative overflow-hidden bg-[linear-gradient(180deg,#081522_0%,#0b1c2c_100%)] py-20">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.06),transparent_40%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,176,235,0.08),transparent_40%)] pointer-events-none" />
+      </div>
 
-        {/* Section Title */}
-        <motion.div 
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <div className="flex items-center justify-center space-x-4 mb-6">
-            <div className="h-0.5 w-12 bg-[#FFC635]"></div>
-            <h2 className="text-4xl font-medium tracking-tight text-[#00204A] sm:text-5xl">
+          <div className="mb-6 flex items-center justify-center space-x-4">
+            <div className="h-0.5 w-12 bg-[#FFC635]" />
+            <h2 className="text-4xl font-medium tracking-tight text-[#f4fbff] sm:text-5xl">
               Our Commitment to Excellence
             </h2>
-            <div className="h-0.5 w-12 bg-[#FFC635]"></div>
+            <div className="h-0.5 w-12 bg-[#FFC635]" />
           </div>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#00204A]/10 shadow-[0_8px_30px_rgb(0,32,74,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex items-start space-x-4">
-                <img
-                  src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-22.png?updatedAt=1732207355523"
-                  alt="Financial analysis"
-                  className="w-24 h-24 rounded-lg object-cover shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-[#00204A] mb-3">Professional Excellence</h3>
-                  <p className="text-[#00204A]/70 leading-relaxed">
-                    Global Associates is an organization of substance with a full-service capability available in Sri Lanka.
-                  </p>
+            {[
+              {
+                title: 'Professional Excellence',
+                image: 'https://ik.imagekit.io/ri5cvrkrr/neve-accounting-22.png?updatedAt=1732207355523',
+                alt: 'Financial analysis',
+                text: 'Global Associates is an organization of substance with a full-service capability available in Sri Lanka.'
+              },
+              {
+                title: 'Tailored Solutions',
+                image: 'https://ik.imagekit.io/ri5cvrkrr/neve-accounting-15.jpg?updatedAt=1732207353030',
+                alt: 'Business consultation',
+                text: 'We construct our team to reflect your organization structure. We make all aspects of our service delivery transparent to the client.'
+              },
+              {
+                title: 'Exceeding Expectations',
+                image: 'https://ik.imagekit.io/ri5cvrkrr/neve-accounting-17.jpg?updatedAt=1732207353126',
+                alt: 'Team collaboration',
+                text: 'Our aim is to beat your expectations from any assignments, bringing our views about business operations and compliance.'
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 + index * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.88)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-start space-x-4">
+                  <img src={item.image} alt={item.alt} className="h-24 w-24 rounded-xl object-cover shadow-md" />
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold text-[#f4fbff]">{item.title}</h3>
+                    <p className="leading-relaxed text-[#9db0c3]">{item.text}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#00204A]/10 shadow-[0_8px_30px_rgb(0,32,74,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex items-start space-x-4">
-                <img
-                  src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-15.jpg?updatedAt=1732207353030"
-                  alt="Business consultation"
-                  className="w-24 h-24 rounded-lg object-cover shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-[#00204A] mb-3">Tailored Solutions</h3>
-                  <p className="text-[#00204A]/70 leading-relaxed">
-                    We construct our team to reflect your organization structure. We make all aspects of our service delivery transparent to the client.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#00204A]/10 shadow-[0_8px_30px_rgb(0,32,74,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex items-start space-x-4">
-                <img
-                  src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-17.jpg?updatedAt=1732207353126"
-                  alt="Team collaboration"
-                  className="w-24 h-24 rounded-lg object-cover shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold text-[#00204A] mb-3">Exceeding Expectations</h3>
-                  <p className="text-[#00204A]/70 leading-relaxed">
-                    Our aim is to beat your expectations from any assignments, bringing our views about business operations and compliance.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Right Column - Image Grid */}
           <div className="grid grid-cols-2 gap-6">
-            {/* Main Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="col-span-2 group"
             >
-              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-[#24435d] shadow-[0_24px_60px_rgba(0,0,0,0.25)]">
                 <img
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-12.jpg?updatedAt=1732207352390"
                   alt="Business professionals"
-                  className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#00204A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06131f]/70 to-transparent opacity-80" />
               </div>
             </motion.div>
 
-            {/* Smaller Images */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group"
-            >
-              <img
-                src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-19.jpg?updatedAt=1732207353391"
-                alt="Corporate meeting"
-                className="w-full h-48 object-cover rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group"
-            >
-              <img
-                src="https://ik.imagekit.io/ri5cvrkrr/acc1.jpg?updatedAt=1732207356333"
-                alt="Office workspace"
-                className="w-full h-48 object-cover rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
+            {[
+              { src: 'https://ik.imagekit.io/ri5cvrkrr/neve-accounting-19.jpg?updatedAt=1732207353391', alt: 'Corporate meeting' },
+              { src: 'https://ik.imagekit.io/ri5cvrkrr/acc1.jpg?updatedAt=1732207356333', alt: 'Office workspace' }
+            ].map((image, index) => (
+              <motion.div
+                key={image.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 + index * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="relative group"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-48 w-full rounded-xl border border-[#24435d] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-transform duration-500 group-hover:scale-105"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

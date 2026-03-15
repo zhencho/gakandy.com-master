@@ -138,10 +138,10 @@ const ServicesPage: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="pt-20"
+      className="bg-[linear-gradient(180deg,#06131f_0%,#081522_100%)] pt-20"
     >
       {/* Main Services Section */}
-      <section className="py-12 bg-white">
+      <section className="bg-transparent py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={staggerContainer}
@@ -151,13 +151,13 @@ const ServicesPage: React.FC = () => {
           >
             <motion.h1 
               variants={fadeInUp}
-              className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#033A5B] to-[#22B0EB] mb-4"
+              className="mb-4 bg-gradient-to-r from-[#f4fbff] to-[#7cd8ff] bg-clip-text text-4xl font-bold text-transparent"
             >
               Our Services
             </motion.h1>
             <motion.p 
               variants={fadeInUp}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="mx-auto max-w-3xl text-xl text-[#9db0c3]"
             >
               Comprehensive professional services tailored to meet your business needs, 
               ensuring excellence and reliability in every engagement.
@@ -178,7 +178,7 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Additional Services Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={staggerContainer}
@@ -188,13 +188,13 @@ const ServicesPage: React.FC = () => {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-3xl font-bold text-[#033A5B] mb-4"
+              className="mb-4 text-3xl font-bold text-[#f4fbff]"
             >
               Additional Services Upon Request
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="mx-auto max-w-2xl text-[#9db0c3]"
             >
               We offer a comprehensive range of specialized services tailored to meet your specific business needs
             </motion.p>

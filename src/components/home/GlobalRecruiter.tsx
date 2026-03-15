@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const GlobalRecruiter: React.FC = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-[#00204A] to-[#002B5B] text-white overflow-hidden">
+    <section className="overflow-hidden bg-[linear-gradient(135deg,#07111b_0%,#0b1c2c_55%,#102335_100%)] py-16 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export const GlobalRecruiter: React.FC = () => {
           >
             Looking for Top Talent?
           </motion.h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-300">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-[#9db0c3]">
             Connect with our sister company, Global Rapid Recruiter, specializing in finding exceptional talent 
             for your business needs. From finance professionals to industry experts, we help you build the perfect team.
           </p>
@@ -48,8 +48,8 @@ export const GlobalRecruiter: React.FC = () => {
             href="https://globalrapidrecruiter.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFC635] text-[#00204A] rounded-full font-semibold 
-                     hover:bg-[#FFD700] transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FFC635] px-8 py-4 font-semibold text-[#06131f]
+                     transition-all duration-300 transform hover:scale-105 hover:bg-[#ffd86a]"
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -62,13 +62,13 @@ export const GlobalRecruiter: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="mx-auto mt-12 max-w-4xl rounded-[2rem] border border-white/10 bg-white/8 p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.2)] backdrop-blur-sm"
+          className="mx-auto mt-12 max-w-4xl rounded-[2rem] border border-[#24435d] bg-[rgba(12,27,42,0.8)] p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.26)] backdrop-blur-sm"
         >
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#FFC635] text-[#00204A]">
             <ShieldCheck className="h-7 w-7" />
           </div>
-          <h3 className="text-2xl font-bold text-white">Need a Quick Audit Readiness Check?</h3>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-gray-300">
+          <h3 className="text-2xl font-bold text-[#f4fbff]">Need a Quick Audit Readiness Check?</h3>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#9db0c3]">
             Explore our upcoming audit tool to review compliance touchpoints, organize supporting information,
             and prepare your team for a smoother audit process. The live destination is still being finalized,
             so this button currently uses a placeholder redirect.

@@ -28,7 +28,7 @@ const features: Feature[] = [
 
 export const CompanyOverview: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 py-12 overflow-hidden">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,10 +36,10 @@ export const CompanyOverview: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-[#033A5B] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#f4fbff] sm:text-4xl">
             Company Overview
           </h2>
-          <p className="mt-4 text-lg leading-8 text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 max-w-3xl mx-auto text-lg leading-8 text-[#9db0c3]">
             Global Associates Kandy is a leading professional services firm based in Kandy, Sri Lanka, 
             offering a diverse range of financial and business services.
           </p>

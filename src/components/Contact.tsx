@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HiPhone, HiMail, HiLocationMarker, HiExternalLink } from 'react-icons/hi';
+import { HiPhone, HiMail } from 'react-icons/hi';
 import { supabase } from '../lib/supabase';
 import { ContactFormData } from '../types/contact';
 import { toast } from 'react-hot-toast';
@@ -55,20 +55,20 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="relative bg-white overflow-hidden">
+    <div id="contact" className="relative overflow-hidden bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)]">
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,32,74,0.03),transparent_40%)] pointer-events-none"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,32,74,0.03),transparent_40%)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,176,235,0.07),transparent_40%)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.05),transparent_40%)] pointer-events-none"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-[#00204A] mb-4">
+          <h2 className="mb-4 text-2xl font-medium tracking-tight text-[#f4fbff] md:text-3xl">
             Get in Touch
           </h2>
-          <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-[#00204A]/20 to-transparent"></div>
+          <div className="mx-auto h-px w-32 bg-gradient-to-r from-transparent via-[#4ec4ff]/30 to-transparent"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -76,16 +76,16 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <div className="grid sm:grid-cols-2 gap-6 mb-6">
               {/* Phone Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-1 transition-all duration-300 border border-[#00204A]/10">
+              <div className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-[#00204A]/5 rounded-lg">
-                    <HiPhone className="w-6 h-6 text-[#00204A]" />
+                  <div className="rounded-xl bg-[#102335] p-3">
+                    <HiPhone className="h-6 w-6 text-[#4ec4ff]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#00204A] mb-1">Phone</h3>
+                    <h3 className="mb-1 text-xl font-semibold text-[#f4fbff]">Phone</h3>
                     <a 
                       href="tel:+94 81 123 4567" 
-                      className="text-lg text-[#00204A]/80 hover:text-[#00204A] hover:underline"
+                      className="text-lg text-[#9db0c3] hover:text-[#dce7f1] hover:underline"
                     >
                       +94 81 123 4567
                     </a>
@@ -94,16 +94,16 @@ export default function Contact() {
               </div>
 
               {/* Email Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-1 transition-all duration-300 border border-[#00204A]/10">
+              <div className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-[#00204A]/5 rounded-lg">
-                    <HiMail className="w-6 h-6 text-[#00204A]" />
+                  <div className="rounded-xl bg-[#102335] p-3">
+                    <HiMail className="h-6 w-6 text-[#4ec4ff]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#00204A] mb-1">Email</h3>
+                    <h3 className="mb-1 text-xl font-semibold text-[#f4fbff]">Email</h3>
                     <a 
                       href="mailto:info@gakandy.com" 
-                      className="text-lg text-[#00204A]/80 hover:text-[#00204A] hover:underline"
+                      className="text-lg text-[#9db0c3] hover:text-[#dce7f1] hover:underline"
                     >
                       info@gakandy.com
                     </a>
@@ -113,10 +113,10 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-[#00204A]/10">
+            <div className="rounded-[1.75rem] border border-[#24435d] bg-[rgba(12,27,42,0.92)] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.24)]">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#00204A]/90">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-[#dce7f1]">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -124,12 +124,12 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full px-4 py-3 bg-[#00204A]/5 border border-[#00204A]/10 rounded-md shadow-sm focus:ring-2 focus:ring-[#00204A] focus:border-transparent text-[#00204A] placeholder-[#00204A]/50"
+                    className="mt-1 block w-full rounded-xl border border-[#24435d] bg-[#102335] px-4 py-3 text-[#f4fbff] placeholder-[#7d92a7] shadow-sm focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#00204A]/90">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-[#dce7f1]">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -137,12 +137,12 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full px-4 py-3 bg-[#00204A]/5 border border-[#00204A]/10 rounded-md shadow-sm focus:ring-2 focus:ring-[#00204A] focus:border-transparent text-[#00204A] placeholder-[#00204A]/50"
+                    className="mt-1 block w-full rounded-xl border border-[#24435d] bg-[#102335] px-4 py-3 text-[#f4fbff] placeholder-[#7d92a7] shadow-sm focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-[#00204A]/90">Subject</label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-[#dce7f1]">Subject</label>
                   <input
                     type="text"
                     id="subject"
@@ -150,12 +150,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full px-4 py-3 bg-[#00204A]/5 border border-[#00204A]/10 rounded-md shadow-sm focus:ring-2 focus:ring-[#00204A] focus:border-transparent text-[#00204A] placeholder-[#00204A]/50"
+                    className="mt-1 block w-full rounded-xl border border-[#24435d] bg-[#102335] px-4 py-3 text-[#f4fbff] placeholder-[#7d92a7] shadow-sm focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                     placeholder="Subject of your message"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[#00204A]/90">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-[#dce7f1]">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -163,17 +163,17 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="mt-1 block w-full px-4 py-3 bg-[#00204A]/5 border border-[#00204A]/10 rounded-md shadow-sm focus:ring-2 focus:ring-[#00204A] focus:border-transparent text-[#00204A] placeholder-[#00204A]/50"
+                    className="mt-1 block w-full rounded-xl border border-[#24435d] bg-[#102335] px-4 py-3 text-[#f4fbff] placeholder-[#7d92a7] shadow-sm focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a]"
                     placeholder="Your message"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-[#00204A] text-white px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+                  className={`w-full rounded-full bg-[#22B0EB] px-6 py-3 font-medium text-[#06131f] transition-all duration-300 ${
                     isSubmitting 
                       ? 'opacity-70 cursor-not-allowed' 
-                      : 'hover:bg-[#00204A]/90'
+                      : 'hover:bg-[#56d4ff]'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -186,25 +186,25 @@ export default function Contact() {
           <div className="lg:col-span-1">
             <div className="space-y-6">
               {/* Map Card */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.92)] shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
                 <GoogleMap />
               </div>
 
               {/* Business Hours Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 transform hover:-translate-y-1 transition-all duration-300 border border-[#00204A]/10">
-                <h3 className="text-xl font-semibold text-[#00204A] mb-4">Business Hours</h3>
+              <div className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1">
+                <h3 className="mb-4 text-xl font-semibold text-[#f4fbff]">Business Hours</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[#00204A]/70">Monday - Friday</span>
-                    <span className="text-[#00204A] font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="text-[#9db0c3]">Monday - Friday</span>
+                    <span className="font-medium text-[#dce7f1]">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#00204A]/70">Saturday</span>
-                    <span className="text-[#00204A] font-medium">9:00 AM - 1:00 PM</span>
+                    <span className="text-[#9db0c3]">Saturday</span>
+                    <span className="font-medium text-[#dce7f1]">9:00 AM - 1:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#00204A]/70">Sunday</span>
-                    <span className="text-[#00204A]">Closed</span>
+                    <span className="text-[#9db0c3]">Sunday</span>
+                    <span className="text-[#dce7f1]">Closed</span>
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function Contact() {
       </div>
       
       {/* Bottom fade effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00204A]/20 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4ec4ff]/20 to-transparent"></div>
     </div>
   );
 }

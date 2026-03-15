@@ -8,7 +8,12 @@ export default {
     extend: {
       colors: {
         site: {
-          bg: '#F2F2F2',
+          bg: '#06131f',
+          surface: '#0c1b2a',
+          elevated: '#102335',
+          border: '#1c3449',
+          text: '#e8f0f7',
+          muted: '#9db0c3',
         },
         indigoDye: {
           primary: '#033A5B',

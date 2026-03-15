@@ -12,13 +12,13 @@ export default function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="pt-20 bg-gradient-to-b from-white to-gray-50"
+      className="bg-[linear-gradient(180deg,#06131f_0%,#081522_100%)] pt-20"
     >
       <CompanyOverview />
       <OurStory />
       <VisionMission />
       <TeamSection />
-      <section className="bg-gradient-to-r from-pictonBlue-50 to-pictonBlue-100 py-6">
+      <section className="bg-[linear-gradient(135deg,#0b1c2c_0%,#102335_100%)] py-6">
         <Benefits />
       </section>
       <CoreValues />

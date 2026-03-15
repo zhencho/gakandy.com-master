@@ -84,7 +84,7 @@ const teamMembers: TeamMember[] = [
 
 export const TeamSection: React.FC = () => {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,10 +93,10 @@ export const TeamSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-[#033A5B] mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-[#f4fbff]">
             Our Leadership Team
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-[#9db0c3]">
             Meet our experienced partners who lead Global Associates with expertise and dedication
           </p>
         </motion.div>
