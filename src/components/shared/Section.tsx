@@ -39,13 +39,13 @@ export default function Section({
     >
       <div className={`container mx-auto px-4 ${containerClassName}`}>
         {(title || subtitle) && (
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             {title && (
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`text-3xl md:text-4xl font-bold font-serif mb-4 ${
+                className={`section-title mb-4 font-serif ${
                   background === 'primary' || background === 'secondary'
                     ? 'text-white'
                     : 'text-site-text'
@@ -60,11 +60,11 @@ export default function Section({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className={`text-lg ${
+                className={`section-subtitle ${
                   background === 'primary' || background === 'secondary'
                     ? 'text-gray-100'
                     : 'text-site-muted'
-                } max-w-2xl mx-auto ${subtitleClassName}`}
+                } ${subtitleClassName}`}
               >
                 {subtitle}
               </motion.p>

@@ -14,19 +14,19 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 text-center"
+          className="mb-12 text-center lg:mb-16"
         >
           <div className="mb-6 flex items-center justify-center space-x-4">
             <div className="h-0.5 w-12 bg-[#FFC635]" />
-            <h2 className="text-4xl font-medium tracking-tight text-[#f4fbff] sm:text-5xl">
+            <h2 className="text-4xl font-medium tracking-[-0.04em] text-[#f4fbff] sm:text-5xl">
               Our Commitment to Excellence
             </h2>
             <div className="h-0.5 w-12 bg-[#FFC635]" />
           </div>
         </motion.div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-8">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="space-y-6">
             {[
               {
                 title: 'Professional Excellence',
@@ -58,8 +58,8 @@ export default function About() {
                 <div className="flex items-start space-x-4">
                   <img src={item.image} alt={item.alt} className="h-24 w-24 rounded-xl object-cover shadow-md" />
                   <div>
-                    <h3 className="mb-3 text-xl font-semibold text-[#f4fbff]">{item.title}</h3>
-                    <p className="leading-relaxed text-[#9db0c3]">{item.text}</p>
+                    <h3 className="mb-2.5 text-xl font-semibold tracking-[-0.02em] text-[#f4fbff]">{item.title}</h3>
+                    <p className="max-w-md text-[15px] leading-7 text-[#9db0c3] sm:text-base">{item.text}</p>
                   </div>
                 </div>
               </motion.div>

@@ -20,12 +20,12 @@ export default function Button({
   disabled,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-colors';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-300';
   
   const variantStyles = {
-    primary: 'bg-indigoDye-primary hover:bg-indigoDye-secondary text-white',
-    secondary: 'bg-pictonBlue-primary hover:bg-pictonBlue-secondary text-white',
-    outline: 'border-2 border-indigoDye-primary text-indigoDye-primary hover:bg-indigoDye-primary hover:text-white',
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    outline: 'inline-flex items-center justify-center rounded-full border border-site-border bg-transparent px-6 py-3 font-semibold text-site-text transition-all duration-300 hover:border-[#4ec4ff] hover:bg-site-elevated/70 hover:text-white',
   };
 
   const sizeStyles = {

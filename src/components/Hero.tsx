@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+import { fadeInUp, gentleFloat, scaleIn, slideInFromLeft, slideInFromRight, staggerContainer } from '../utils/animations';
 
 const highlights = [
   'Audit and assurance services tailored for growth-stage and established businesses',
@@ -20,23 +21,24 @@ export default function Hero() {
       className="relative overflow-hidden bg-[linear-gradient(180deg,#07111b_0%,#091827_48%,#06131f_100%)] pt-32 sm:pt-36"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-10rem] top-8 h-72 w-72 rounded-full bg-[#22B0EB]/12 blur-3xl" />
-        <div className="absolute right-[-8rem] top-24 h-80 w-80 rounded-full bg-[#033A5B]/25 blur-3xl" />
-        <div className="absolute bottom-[-8rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FFC635]/8 blur-3xl" />
+        <motion.div variants={gentleFloat} initial="initial" animate="animate" className="absolute left-[-10rem] top-8 h-72 w-72 rounded-full bg-[#22B0EB]/12 blur-3xl" />
+        <motion.div variants={gentleFloat} initial="initial" animate="animate" className="absolute right-[-8rem] top-24 h-80 w-80 rounded-full bg-[#033A5B]/25 blur-3xl" style={{ animationDelay: '1.2s' }} />
+        <motion.div variants={gentleFloat} initial="initial" animate="animate" className="absolute bottom-[-8rem] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FFC635]/8 blur-3xl" style={{ animationDelay: '2.4s' }} />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28">
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+        className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-[4.5rem] sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8 lg:pb-24"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={slideInFromLeft}
           className="max-w-3xl"
         >
           <div className="max-w-fit px-2 py-3">
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
+              variants={scaleIn}
               className="relative"
             >
               <motion.div
@@ -103,36 +105,37 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.72)] px-4 py-2 text-sm font-semibold text-[#9fdcff] shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur">
+          <motion.div variants={fadeInUp} className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.72)] px-4 py-2 text-sm font-semibold text-[#9fdcff] shadow-[0_10px_30px_rgba(0,0,0,0.2)] backdrop-blur">
             <Sparkles className="h-4 w-4 text-[#4ec4ff]" />
             Trusted chartered accountants for modern businesses
-          </div>
+          </motion.div>
 
-          <h1 className="mt-8 max-w-3xl text-5xl font-bold leading-[1.02] tracking-tight text-[#f3f8fc] sm:text-6xl">
+          <motion.h1 variants={fadeInUp} className="mt-7 max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-[#f3f8fc] sm:text-6xl">
             Financial clarity,
             <span className="block bg-gradient-to-r from-[#4ec4ff] via-[#8cdcf8] to-[#f1f7fb] bg-clip-text text-transparent">
               audit confidence,
             </span>
             and business momentum.
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#9db0c3] sm:text-xl">
+          <motion.p variants={fadeInUp} className="mt-5 max-w-xl text-base leading-7 text-[#9db0c3] sm:text-lg sm:leading-8">
             Global Associates helps organizations strengthen reporting, navigate compliance,
             and move forward with practical advice that feels sharp, responsive, and dependable.
-          </p>
+          </motion.p>
 
-          <div className="mt-8 space-y-3">
+          <motion.div variants={staggerContainer} className="mt-7 space-y-3">
             {highlights.map((item) => (
-              <div key={item} className="flex items-start gap-3 text-[#c7d6e4]">
+              <motion.div variants={fadeInUp} key={item} className="flex items-start gap-3 text-[#c7d6e4]">
                 <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#12314a] text-white">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#4ec4ff]" />
                 </div>
-                <p className="text-base leading-7">{item}</p>
-              </div>
+                <p className="max-w-xl text-[15px] leading-7 sm:text-base">{item}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <motion.div variants={fadeInUp} className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <motion.div whileHover={{ y: -4 }} whileTap={{ scale: 0.98 }}>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#22B0EB] px-7 py-4 text-sm font-semibold text-[#06131f] shadow-[0_18px_40px_rgba(34,176,235,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#56d4ff]"
@@ -140,6 +143,8 @@ export default function Hero() {
               Schedule Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -4 }} whileTap={{ scale: 0.98 }}>
             <Link
               to="/services"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#24435d] bg-[rgba(16,35,53,0.72)] px-7 py-4 text-sm font-semibold text-[#e8f0f7] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#4ec4ff]/40 hover:text-white"
@@ -147,54 +152,59 @@ export default function Hero() {
               Explore Services
               <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          <motion.div variants={staggerContainer} className="mt-10 grid gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
-              <div
+              <motion.div
+                variants={fadeInUp}
                 key={stat.label}
                 className="rounded-[1.5rem] border border-[#24435d] bg-[rgba(12,27,42,0.9)] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur"
               >
                 <p className="text-2xl font-bold text-[#f1f7fb]">{stat.value}</p>
-                <p className="mt-2 text-sm font-medium text-[#9db0c3]">{stat.label}</p>
-              </div>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#9db0c3]">{stat.label}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 28 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.15 }}
+          variants={slideInFromRight}
           className="relative"
         >
           <div className="absolute -left-6 top-10 hidden h-24 w-24 rounded-[2rem] bg-[#FFC635]/15 blur-2xl lg:block" />
           <div className="absolute -right-6 bottom-16 hidden h-28 w-28 rounded-full bg-[#22B0EB]/18 blur-2xl lg:block" />
 
           <div className="relative overflow-hidden rounded-[2rem] border border-[#24435d] bg-[rgba(12,27,42,0.86)] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-            <img
+            <motion.img
               src="https://ik.imagekit.io/d36vkx7c33/gakandy/primary-hero-image.jpg"
               alt="Global Associates professional consultation"
               className="h-[440px] w-full rounded-[1.5rem] object-cover object-[72%_top] lg:object-[78%_top]"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             />
 
             <div className="absolute inset-0 rounded-[1.75rem] bg-gradient-to-t from-[#06131f]/60 via-transparent to-transparent" />
-            <div className="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-white/10 bg-[rgba(7,17,27,0.72)] p-6 text-white shadow-[0_18px_50px_rgba(0,0,0,0.32)] backdrop-blur-md lg:right-12">
+            <motion.div
+              variants={fadeInUp}
+              className="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-white/10 bg-[rgba(7,17,27,0.72)] p-6 text-white shadow-[0_18px_50px_rgba(0,0,0,0.32)] backdrop-blur-md lg:right-10"
+            >
               <div className="flex items-center gap-3 text-sm font-semibold text-[#FFC635]">
                 <TrendingUp className="h-4 w-4" />
                 Performance through excellence
               </div>
-              <p className="mt-3 text-2xl font-semibold leading-tight text-[#f4fbff]">
+              <p className="mt-3 max-w-md text-2xl font-semibold leading-tight tracking-[-0.03em] text-[#f4fbff]">
                 Built for organizations that want sharper oversight and smoother decision-making.
               </p>
-              <p className="mt-3 max-w-md text-sm leading-6 text-[#b5c6d6]">
+              <p className="mt-3 max-w-sm text-sm leading-6 text-[#b5c6d6]">
                 From audit preparation to advisory support, we help teams stay organized, accountable,
                 and ready for what comes next.
               </p>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

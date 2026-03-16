@@ -23,8 +23,7 @@ export default function Container({
   return (
     <div
       className={`
-        mx-auto
-        w-full
+        mx-auto w-full
         ${sizes[size]}
         ${padding ? 'px-4 sm:px-6 lg:px-8' : ''}
         ${className}

@@ -3,20 +3,20 @@ import { Target, Eye, ArrowRight } from 'lucide-react';
 
 export default function MissionVision() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] pb-24 pt-8">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#07131f_0%,#0b1c2c_100%)] pb-24 pt-16">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 -top-40 h-96 w-96 rotate-12 rounded-full bg-[#12314a]/50" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 -rotate-12 rounded-full bg-[#102335]/60" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-20 text-center">
+        <div className="mb-12 text-center lg:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-4 text-4xl font-bold text-[#f4fbff]"
+            className="mb-4 text-4xl font-bold tracking-[-0.035em] text-[#f4fbff]"
           >
             Our Mission & Vision
           </motion.h2>
@@ -29,7 +29,7 @@ export default function MissionVision() {
           />
         </div>
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {[
             {
               title: 'Our Mission',
@@ -56,16 +56,16 @@ export default function MissionVision() {
               >
                 <div className="absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#22B0EB]/8 to-transparent" />
                 <div className="relative">
-                  <div className="mb-6 flex items-center">
+                  <div className="mb-5 flex items-center">
                     <div className="rounded-2xl bg-[#102335] p-3 border border-[#24435d]">
                       <Icon className="h-8 w-8 text-[#4ec4ff]" />
                     </div>
-                    <h3 className="ml-4 text-2xl font-bold text-[#f4fbff]">{card.title}</h3>
+                    <h3 className="ml-4 text-2xl font-bold tracking-[-0.025em] text-[#f4fbff]">{card.title}</h3>
                   </div>
-                  <p className="mb-6 text-lg leading-relaxed text-[#9db0c3]">{card.text}</p>
+                  <p className="mb-6 max-w-md text-base leading-7 text-[#9db0c3] sm:text-lg sm:leading-8">{card.text}</p>
                   <ul className="space-y-3">
                     {card.items.map((item) => (
-                      <li key={item} className="flex items-center text-[#d6e3ef]">
+                      <li key={item} className="flex items-center text-[15px] text-[#d6e3ef] sm:text-base">
                         <ArrowRight className="mr-2 h-5 w-5 text-[#FFC635]" />
                         {item}
                       </li>

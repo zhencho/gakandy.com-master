@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .surface-card {
+    @apply rounded-[1.5rem] border border-site-border bg-site-surface/90 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur;
+  }
+
+  .surface-card-elevated {
+    @apply rounded-[1.75rem] border border-site-border bg-site-elevated/90 shadow-[0_24px_60px_rgba(0,0,0,0.26)] backdrop-blur;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-[-0.03em] text-site-text md:text-4xl;
+  }
+
+  .section-subtitle {
+    @apply mx-auto max-w-2xl text-base leading-7 text-site-muted sm:text-lg sm:leading-8;
+  }
+
+  .section-eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.28em] text-[#56d4ff] sm:text-base;
+  }
+
+  .prose-balanced {
+    @apply max-w-2xl text-base leading-7 text-site-muted sm:text-lg sm:leading-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[#22B0EB] px-6 py-3 font-semibold text-[#06131f] shadow-[0_18px_40px_rgba(34,176,235,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#56d4ff];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-site-border bg-site-elevated/80 px-6 py-3 font-semibold text-site-text shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#4ec4ff]/40 hover:text-white;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-[#FFC635] px-6 py-3 font-semibold text-[#06131f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffd86a];
+  }
+
+  .field-shell {
+    @apply w-full rounded-xl border border-site-border bg-site-elevated px-4 py-3 text-site-text placeholder:text-site-muted shadow-sm transition-all duration-300 focus:border-[#4ec4ff] focus:ring-2 focus:ring-[#12314a];
+  }
+}
+
 html {
   scroll-behavior: smooth;
   background:

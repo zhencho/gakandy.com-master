@@ -15,12 +15,12 @@ export default function Card({
   onClick,
   ...props
 }: CardProps) {
-  const baseStyles = 'rounded-lg transition-all duration-200';
+  const baseStyles = 'transition-all duration-300';
   
   const variantStyles = {
-    default: 'bg-white',
-    elevated: 'bg-white shadow-lg hover:shadow-xl',
-    bordered: 'bg-white border border-gray-200 hover:border-gray-300',
+    default: 'surface-card',
+    elevated: 'surface-card-elevated',
+    bordered: 'surface-card border-[#2e597b]',
   };
 
   const styles = [
