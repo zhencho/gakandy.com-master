@@ -41,9 +41,9 @@ export const OurStory: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-[34rem] lg:max-w-[32rem]"
           >
-            <div className="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-[#033A5B] via-[#22B0EB] to-[#126190]" />
+            <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-[#033A5B] via-[#22B0EB] to-[#126190] sm:left-7" />
             
             {/* Timeline Items */}
             {timelineItems.map((item, index) => (

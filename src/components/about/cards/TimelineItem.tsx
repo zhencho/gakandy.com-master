@@ -12,10 +12,10 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="relative mb-12 last:mb-0 pl-16"
+      className="relative mb-12 pl-14 last:mb-0 sm:pl-16"
     >
       {/* Timeline Dot */}
-      <div className="absolute left-[29px] top-1.5 w-3 h-3 rounded-full bg-gradient-to-r from-[#033A5B] to-[#22B0EB] shadow-lg transform -translate-x-1/2">
+      <div className="absolute left-6 top-1.5 h-3 w-3 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#033A5B] to-[#22B0EB] shadow-lg sm:left-7">
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#033A5B] to-[#22B0EB] animate-ping opacity-20" />
       </div>
       

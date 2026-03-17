@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { AUDIT_TOOL_URL } from '../../constants/links';
 import { fadeInUp, softReveal, staggerContainer } from '../../utils/animations';
 
 export const GlobalRecruiter: React.FC = () => {
@@ -66,12 +67,13 @@ export const GlobalRecruiter: React.FC = () => {
           <h3 className="text-2xl font-bold tracking-[-0.025em] text-[#f4fbff]">Need a Quick Audit Readiness Check?</h3>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-[#9db0c3] sm:leading-8">
             Explore our upcoming audit tool to review compliance touchpoints, organize supporting information,
-            and prepare your team for a smoother audit process. The live destination is still being finalized,
-            so this button currently uses a placeholder redirect.
+            and prepare your team for a smoother audit process. Open the live workspace to continue in
+            our audit platform.
           </p>
           <Link
             to="/audit-tool"
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#FFC635] bg-transparent px-8 py-4 font-semibold text-[#FFC635] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFC635] hover:text-[#00204A]"
+            aria-label={`Open Audit Tool at ${AUDIT_TOOL_URL}`}
           >
             <span>Open Audit Tool</span>
             <ExternalLink className="h-5 w-5" />

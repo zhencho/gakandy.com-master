@@ -11,7 +11,7 @@ export default function AuditToolRedirectPage() {
       <div className="max-w-xl rounded-[1.75rem] border border-[#24435d] bg-[rgba(12,27,42,0.92)] px-8 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.24)]">
         <h1 className="text-3xl font-bold text-[#f4fbff]">Opening Audit Tool</h1>
         <p className="mt-4 text-lg text-[#9db0c3]">
-          Redirecting you to our audit tool portal. If nothing happens, use the button below.
+          Redirecting you to app.gakandy.com. If nothing happens, use the button below.
         </p>
         <a
           href={AUDIT_TOOL_URL}

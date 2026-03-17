@@ -1,1 +1,1 @@
-export const AUDIT_TOOL_URL = 'https://example.com/audit-tool';
+export const AUDIT_TOOL_URL = 'https://app.gakandy.com';
