@@ -1,1 +1,1 @@
-export const AUDIT_TOOL_URL = 'https://app.gakandy.com';
+export const AUDIT_TOOL_URL = 'https://sandra-sacramento-prototype-dedicated.trycloudflare.com/GA-Audit-CRM/';
